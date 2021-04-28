@@ -1,0 +1,21 @@
+ALGORITHM sort_cards
+VAR
+   i,j,key :INTEGER;
+   arr: ARRAY_OF INTEGER[10];
+
+BEGIN
+    read(arr);
+    FOR i FROM 0 TO arr.length STEP 1  DO
+        key := arr[i] ;
+        FOR j FROM i-1 TO 0 STEP -1  DO
+            IF (j >=0 AND arr[j] > key) THEN
+                arr[j+1]=arr[j] ;
+                arr[j] = key ; 
+            END_IF
+        END_FOR
+    END_FOR   
+
+    write("The array to be sorted");
+    write(arr);
+
+END
